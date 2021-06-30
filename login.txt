@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".activity.MainActivity"
+android:orientation="horizontal">
+
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#4285f4"/>
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/view"
+        android:background="@drawable/ic_wave"
+        />
+
+
+
+<EditText
+    android:id="@+id/edtEmail"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="@string/email"
+    android:inputType="textEmailAddress"
+    android:padding="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_below="@id/view2"
+    android:drawableStart="@drawable/ic_email"
+    android:background="@drawable/round_shape"
+    android:maxLines="1"/>
+
+
+
+
+<EditText
+    android:id="@+id/edtpass"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="@string/password"
+    android:inputType="textPassword"
+    android:maxLines="1"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="10dp"
+    android:padding="10dp"
+    android:background="@drawable/round_shape"
+    android:drawableStart="@drawable/ic_lock"
+    android:layout_below="@id/edtEmail"
+    />
+    <TextView
+        android:id="@+id/txtForgot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edtpass"
+        android:text="Forget?"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="20dp"
+        android:textSize="15sp"
+
+        android:textColor="#4285f4"/>
+<Button
+    android:id="@+id/btnLogin"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:backgroundTint="#4285f4"
+    android:text="@string/login"
+    android:layout_marginTop="15dp"
+    android:background="@drawable/button_shape"
+
+    android:padding="10dp"
+    android:layout_below="@id/edtpass"
+    android:layout_centerHorizontal="true"
+    />
+
+
+<TextView
+    android:id="@+id/txtNotReg"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/not_registered_yet"
+    android:layout_below="@id/btnLogin"
+    android:layout_centerHorizontal="true"
+    android:textColor="#000000"
+    android:layout_marginTop="20dp"
+    android:textSize="16sp"
+    android:textAlignment="center"
+
+    />
+<TextView
+    android:id="@+id/txtSignUp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/signup"
+    android:layout_marginTop="10dp"
+    android:textAlignment="center"
+    android:textSize="16sp"
+    android:textColor="#4285f4"
+    android:layout_below="@+id/txtNotReg"
+
+    />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="50dp"
+
+        android:layout_marginEnd="-37dp"
+        android:src="@drawable/ic_person" />
+
+    <TextView
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="-3dp"
+        android:text="Already have an
+         account?"
+        android:textColor="#ffffff"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+       android:layout_alignParentBottom="true"
+        android:background="@drawable/ic_lower"
+         />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="12dp"
+        android:src="@drawable/circle_white" />
+
+
+</RelativeLayout>

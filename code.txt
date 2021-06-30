@@ -1,0 +1,52 @@
+ val queue=Volley.newRequestQueue(activity as Context)
+    val url="http://13.235.250.119/v2/restaurants/fetch_result/"
+    val jsonObjectRequest=object :JsonObjectRequest(Request.Method.GET,url,
+        null,Response.Listener {
+            val success=it.getBoolean("success")
+            if(success)
+            {
+                val data= it.getJSONArray("data")
+                for(i in 0 until data.length())
+                {
+                    val restJsonObject=data.getJSONObject(i)
+                    val restObject=Rest(
+                        restJsonObject.getString("name"),
+                        restJsonObject.getString("rating"),
+                        restJsonObject.getString("cost_for_one"),
+                        restJsonObject.getString("image_url")
+                    )
+                    restList.add(restObject)
+                    recyclerAdapter=DashboardRecyclearAdapter(activity as Context,restList)
+                    recycleardashboard.adapter=recyclerAdapter
+                    recycleardashboard.layoutManager=layoutManager
+
+                }
+            }else{
+                Toast.makeText(activity as Context, "Error 1st occured", Toast.LENGTH_SHORT).show()
+            }
+
+
+
+
+
+
+    },Response.ErrorListener {
+        if(activity!=null)
+        {
+            Toast.makeText(activity as Context, "Try again", Toast.LENGTH_SHORT).show()
+        }
+
+
+    }){
+        override fun getHeaders(): MutableMap<String, String> {
+            val headers=HashMap<String,String>()
+            headers["Content-type"]="application/json"
+            headers["token"]="032b3f83a8b02c"
+            return headers
+
+        }
+
+
+        }
+        queue.add(jsonObjectRequest)
+
